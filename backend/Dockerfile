@@ -1,5 +1,5 @@
-# Stage 1: Build Java backend
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+# Stage 1: Build Java backend with JDK 21
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copy pom.xml and source code
@@ -9,8 +9,8 @@ COPY src ./src
 # Build executable JAR without running database unit tests during build
 RUN mvn clean package -DskipTests
 
-# Stage 2: Runtime image
-FROM eclipse-temurin:17-jre-alpine
+# Stage 2: Runtime image with JRE 21
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copy compiled JAR
