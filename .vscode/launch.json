@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run autohub-backend",
+      "request": "launch",
+      "mainClass": "com.autohub.AutohubApplication",
+      "env": {
+        "DB_PASSWORD": "<YOUR_COPIED_AIVEN_PASSWORD>"
+      }
+    }
+  ]
+}
