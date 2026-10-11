@@ -6,8 +6,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Build executable JAR with debug logging enabled
-RUN mvn clean package -DskipTests -e -X
+# Build executable JAR
+RUN mvn clean package -DskipTests -e
 
 # Stage 2: Runtime image with JRE 21
 FROM eclipse-temurin:21-jre-alpine
